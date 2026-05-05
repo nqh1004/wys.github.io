@@ -38,15 +38,11 @@ Báo cáo này mô tả chi tiết quá trình và kết quả kiểm thử ứn
 - Memejutsu là ứng dụng website có tính năng upload file ảnh lên cộng đồng , họ có thể thay đổi ảnh đại diện và chọn các tính năng upload ảnh random
 - Bản báo cáo này liệt kê các lỗ hỏng bảo mật và những vấn đề liên quan được tìm thấy trong quá trình kiểm thử ứng dụng Memejutsu trên máy tính. Quá trình kiểm thử được thực hiện dưới hình thức whitebox testing
 
-|  | Nghiêm Trọng
-Critical | Cao
-High | Trung Bình
-Medium | Thấp
-Low | Không
-None |
-| --- | --- | --- | --- | --- | --- |
-| Memejutsu | 1 | 2 | 2 |  |  |
-|  |  |  |  |  |  |
+## 🔍 Vulnerability Summary
+
+| 🔴 Critical | 🟠 High | 🟡 Medium | 🟢 Low | ⚪ None |
+|------------|--------|----------|--------|--------|
+|     1      |   2    |    2     |   0    |   0    |
 
 ### 2. Phạm vi
 
@@ -67,16 +63,18 @@ MacOS |  | không | có |
 
 - Kiểm tra đường dẫn `robots.txt` trên url :  [`http://memejutsu-68f6f11c4a.cyberjutsu-lab.tech/`](http://memejutsu-68f6f11c4a.cyberjutsu-lab.tech/random)
 - Phát hiện có một đường dẫn Disallow là  `/build/backup.zip`
+<img width="878" height="241" alt="image" src="https://github.com/user-attachments/assets/c10fd847-f90f-4642-a24c-4ea507f5a7b9" />
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/52b8164e-d843-444e-82db-e69f8f30d300/image.png)
+
 
 - Truy cập đường dẫn [`http://memejutsu-68f6f11c4a.cyberjutsu-lab.tech/](http://memejutsu-68f6f11c4a.cyberjutsu-lab.tech/random)build/backup.zip`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/c36934f3-90bc-45c6-85cd-1d2244ed9710/image.png)
+<img width="573" height="135" alt="image" src="https://github.com/user-attachments/assets/dd180500-61c5-4994-972b-d74c49b7df30" />
 
 - Ta có thể tải về được tập tin backup.zip, truy cập vào tập tin ta sẽ có thể xem được mã nguồn của ứng dụng Memejutsu
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/90d3916c-5809-496c-801a-f5e886fa30e3/image.png)
+<img width="908" height="195" alt="image" src="https://github.com/user-attachments/assets/df7092d5-75e2-4dfe-879b-81c2f6b48ffd" />
+
 
 **Reconmendations**
 
@@ -97,31 +95,40 @@ MacOS |  | không | có |
 
 - Tạo trang cá nhân có tên là `admin`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/f5cd8022-5938-4267-a74e-955d1938ded0/image.png)
+<img width="779" height="721" alt="image" src="https://github.com/user-attachments/assets/efd107d1-b21d-4200-8155-0108e92b938c" />
+
 
 - Truy cập vào trang cá nhân của chính bản thân
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/e7552036-f33c-4490-aa47-c8b0cb7f7685/image.png)
+<img width="312" height="287" alt="image" src="https://github.com/user-attachments/assets/486a8703-62e4-416a-acfd-f51e39e4b3aa" />
+
 
 - Ta vào thẳng trang cá nhân của admin
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/61f1c17d-29ba-45f6-8243-cdd8a3048945/image.png)
+<img width="1871" height="612" alt="image" src="https://github.com/user-attachments/assets/2ca1f2af-fb10-45da-b2e5-c51c83ee293b" />
+
 
 Hoặc ta tạo một trang cá nhân lấy tên khác admin 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/13d568a8-f986-42e0-8846-bfde2cfc9782/image.png)
+<img width="797" height="714" alt="image" src="https://github.com/user-attachments/assets/70b33bf2-844f-46ac-93af-f41aabc18d2e" />
+
 
 - Vào trang cá nhân và kiểm tra url ta thấy có đường dẫn `/u/test`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/62a32136-1f34-48cf-ade4-3b25f1bfb5c4/image.png)
+<img width="1919" height="672" alt="image" src="https://github.com/user-attachments/assets/bdbed8a8-e39d-4331-8123-1b00a0a27061" />
+
+
 
 - Sau đó thay đổi  `/u/{user}` thành `admin` và ta có thể truy cập và trang admin
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/6e76ed35-4335-4707-8689-d680fea5cb79/image.png)
+
+<img width="1862" height="718" alt="image" src="https://github.com/user-attachments/assets/b4979f90-6590-4073-8e50-0fe8e1f5caf8" />
+
 
 - Dẫn đến có thể đọc được dữ liệu không được truy cập
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/5fc79163-44db-45a8-9831-1cb13caa2a20/image.png)
+<img width="1523" height="782" alt="image" src="https://github.com/user-attachments/assets/a92ba9ad-9f63-4d4f-b7af-52c3c2534353" />
+
 
 **Recommendations**
 
@@ -142,7 +149,8 @@ Hoặc ta tạo một trang cá nhân lấy tên khác admin
 
 - Kiểm tra mã nguồn ta lấy được trong file `core-service/app/Http/Controllers/SearchController.php` và phân tích
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/0a41ede2-edbc-4688-8524-afff88a664cc/image.png)
+<img width="1275" height="462" alt="image" src="https://github.com/user-attachments/assets/11b354db-0b26-44ed-a2d3-5d206b0bf558" />
+
 
 - Đoạn mã PHP trên định nghĩa một hàm có tên là `SearchController` để tìm kiếm người dùng và bài viết từ cơ sở dử liệu dựa trên dầu vào `$search`
 - Đoạn code có thể bị lỗi SQL Injection (SQLI) nếu gía trị của `$search` trong thanh tìm kiếm không được kiểm tra và xử lý đúng cách đước khi vào trong câu truy vấn SQL
@@ -155,31 +163,36 @@ Hoặc ta tạo một trang cá nhân lấy tên khác admin
 
 `')%20union%20select%20null,version(),null,null,null--+";`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/443255af-771c-4186-a1fe-ffe8a5952036/image.png)
+<img width="1889" height="606" alt="image" src="https://github.com/user-attachments/assets/d22c20ad-bef2-41a1-a60b-2113cb25287b" />
+
 
 - Ta tiến hành khai thác tiếp SQLi để lấy được tên database là gì bằng payload :
 
 `')%20union%20select%20null,current_database(),null,null,null--+";`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/9ddf228f-4630-47cf-83db-f31128bd178c/image.png)
+<img width="1881" height="842" alt="image" src="https://github.com/user-attachments/assets/f5d41a9f-d086-4618-bc2f-ce76eba6a018" />
+
 
 - Ta biết được `database` hiện tại là `memejutsu` .Tiếp theo ta xem `tables` của database là gì bằng payload
 
 `')%20union%20select%20null,tablename,null,null,null%20from%20pg_tables%20where%20schemaname%20='public'--+";`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/4865e6a6-b2eb-4d62-9aae-54d0195524bb/image.png)
+<img width="1917" height="807" alt="image" src="https://github.com/user-attachments/assets/77ac799f-43ac-4511-bafe-cb9d6db59eba" />
+
 
 - Từ đây ta biết được bên trong database có `tables` là `flag` Tiếp theo ta check xem `column_name` bên trong `tables` bằng payload:
 
 `')%20union%20select%20null,column_name,null,null,null%20from%20information_schema.columns%20where%20table_name%20='flag'--+";`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/1418c6d6-d221-44a0-97ba-9ea854e280d0/image.png)
+<img width="1893" height="801" alt="image" src="https://github.com/user-attachments/assets/483f8cc0-c61f-428d-8c6d-f5b92e35ed0d" />
+
 
 - Cuối dùng ta lấy `column_name` để đọc được flag ta sử dụng payload sau :
 
 `')%20union%20select%20null,content,null,null,null%20from%20flag--+";`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/da35577e-cba7-470c-b7bc-8b7e6fad37fc/image.png)
+<img width="1888" height="783" alt="image" src="https://github.com/user-attachments/assets/4d0d2fdb-f0c4-4f38-b7c5-4474c42b63d5" />
+
 
 **Recommendations**
 
@@ -201,25 +214,30 @@ Hoặc ta tạo một trang cá nhân lấy tên khác admin
 
 - Kiểm tra mã nguồn ta lấy được ở trong file `core-service/app/Http/Controllers/RandomController.php`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/27a3136a-46e5-4db5-b0b0-5307a14a7125/image.png)
+<img width="775" height="412" alt="image" src="https://github.com/user-attachments/assets/fcc297e2-f9b9-429d-b539-0576e05f49d1" />
+
 
 - Nếu cookie không tồn tại, một đối tượng mới cảu `RandomPost` được tạo ra, serialized và lưu vào cookie
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/5c579e78-766f-4f6b-b7fc-9b21254ac064/image.png)
+<img width="772" height="540" alt="image" src="https://github.com/user-attachments/assets/ec7a9e4b-6753-4373-a51a-ab65d876a232" />
+
 
 Ta cùng phân tích bên trong file  `core-service/app/Http/Controllers/Cookie/RandomPost.php` 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/d109b36b-435f-46a3-ac9b-ae0830649b8e/image.png)
+<img width="773" height="930" alt="image" src="https://github.com/user-attachments/assets/e4c35d45-1beb-43f4-9f3a-25bb2c5b7824" />
+
 
 Phương thức tĩnh lấy meme ngẫu nhiên từ hàm `getMeme` 
 
 Phương thức này gọi API để lấy danh sách meme và chọn một meme ngẫu nhiên
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/71ebef5c-3747-4513-bd29-f099e87c0c8d/image.png)
+<img width="669" height="256" alt="image" src="https://github.com/user-attachments/assets/50d187e0-26f7-4dcc-847b-1ed0361dc74b" />
+
 
 - Việc sử dụng `file_get_contents` có thể dẫn đến lỗi bảo mật Path Traversal . Nội dung của `file_get_contents` rơi thẳng vào `random_session` dẫn đến  Path traversal
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/c50c3201-f47c-4ca0-8fb6-6e2ff6f11160/image.png)
+<img width="844" height="402" alt="image" src="https://github.com/user-attachments/assets/e1ad4dbd-0350-4ad8-9b48-b2b90e5270fa" />
+
 
 - Nếu mà kẻ tấn công decode base64 và sau đó chèn một đoạn Path Traversal vào trong đoạn serialize có thể đẫn dến đọc được các file nhạy cảm như `/etc/passwd`
 
@@ -227,7 +245,8 @@ Phương thức này gọi API để lấy danh sách meme và chọn một meme
 
 - Ta tiến kiểm tra decode cookies `random_session` để kiểm tra thì ta thấy được một đoạn url `https://i.imgflip.com/{number_id}.jpg` để tạo một hình ảnh meme mới.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/e89c8b02-865e-4ba4-8638-90250800757a/image.png)
+<img width="1719" height="435" alt="image" src="https://github.com/user-attachments/assets/7b329e1a-79d7-4e69-8b86-44b2979141e6" />
+
 
 - Ta tiến hành khai thác Path Traversal  bằng payload sau :
 
@@ -235,11 +254,12 @@ Phương thức này gọi API để lấy danh sách meme và chọn một meme
 
 - Sau đó ta sẽ decode `base64` và sẽ gửi vào `random_session`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/d73c5be0-5043-4170-90ef-d73b7af8274a/image.png)
+<img width="1675" height="621" alt="image" src="https://github.com/user-attachments/assets/61768dc2-b35d-4715-9474-eac770325e76" />
+
 
 - Kêt quả trả về nằm trong một đoạn `base64` và encode lại và đọc được file `/etc/passwd`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/a0815a8d-2f4d-410a-a28d-26ad2576f768/image.png)
+<img width="1881" height="785" alt="image" src="https://github.com/user-attachments/assets/7256206d-6e61-471c-be74-9c911163e615" />
 
 **Recommendations**
 
@@ -261,7 +281,8 @@ Phương thức này gọi API để lấy danh sách meme và chọn một meme
 
 - Ta phân tích đoạn mã nguồn có trên file `image-service/app/main.py`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/7c0e8690-c0a9-44c2-ba4c-4abbf28e87e3/image.png)
+<img width="1476" height="802" alt="image" src="https://github.com/user-attachments/assets/53a8bb02-d97a-4a93-988c-18c5d6a9d742" />
+
 
 - Đoạn mã sẽ check một đoạn mã token và tạo các tham số
 - Đoạn mã trong python trên định nghĩa hàm `upload_image` để upload hình ảnh lên server
@@ -272,24 +293,29 @@ Phương thức này gọi API để lấy danh sách meme và chọn một meme
 
 - Ta sẽ kiểm tra `token` bằng lỗi Path Traversal mà ta đã khai thác trên thì phát hiện được token nằm ở file `/var/www/html/.env.example`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/949e3008-1185-4a65-89e2-4ba6b21673ff/image.png)
+<img width="1920" height="620" alt="image" src="https://github.com/user-attachments/assets/6143ced8-2749-47f8-b2e4-3c51b1987122" />
+
 
 - Ta tìm thấy đoạn `token` thông qua Path Traversal
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/dce9e817-305b-4c3d-8b24-f77ea93d69a1/image.png)
+<img width="1881" height="805" alt="image" src="https://github.com/user-attachments/assets/bc72fa27-a193-4074-9da8-2b7bbd508df6" />
+
 
 - Ta tiến hành chứng minh xem giá trị `foar` có bị lỗi OS Command Injection không bằng payload `;`sleep10`;` kết hợp với Token mà ta đã lấy được lúc nãy
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/cefcc298-2638-4035-a72d-086387e97fef/image.png)
+<img width="1920" height="846" alt="image" src="https://github.com/user-attachments/assets/d39fcbb6-4682-4636-95a0-7cdf9e01ffe6" />
+
 
 - Kết quả trả về từ server là 21 giây . Ta tiến hành đọc flag bằng cách tạo một file `.png` thông qua chức năng `upload_image` từ server bằng payload :
 - `;`cat /flag* > /storage/user/{id}/{}.png`;`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/0210f880-e6a8-4f30-ab1e-636dd92d60c6/image.png)
+<img width="1524" height="419" alt="image" src="https://github.com/user-attachments/assets/89bb5c85-40c1-44d0-a154-d3b4b05d02e2" />
+
 
 - Sau đó ta tiến hành truy cập vào file ảnh mà ta mới vừa tạo
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5a50476-3c74-4751-b721-f663545ceac9/175d2281-4cd8-4477-8e49-98f12f72e79e/image.png)
+<img width="1888" height="547" alt="image" src="https://github.com/user-attachments/assets/a48785dd-e538-483f-98df-05cd28eb80ff" />
+
 
 **Recommendations**
 
