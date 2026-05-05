@@ -6,10 +6,10 @@
 
 ## 🚀 My Projects
 
-### 🔹 POS System BA
+## 🔹 POS System BA
 
 
-### 🔹 Security Lab (CTF + Pentest)
+## 🔹 Security Lab (CTF + Pentest)
 
 
-### 🔹 ELK + Suricata Monitoring
+## 🔹 ELK + Suricata Monitoring
