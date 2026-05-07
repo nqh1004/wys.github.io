@@ -62,4 +62,4 @@
 - Rule Management
 - Dashboard Visualization
 
-👉 [View Project]
+👉 [View Project](./projects/FPT/Capstone-Project/)
