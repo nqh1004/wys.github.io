@@ -18,6 +18,7 @@
 - User Story
 - Testing Manual & API 
 
+## Security Searcher 
 ---
 
 # 🚀 My Projects
@@ -64,4 +65,4 @@
 - Rule Management
 - Dashboard Visualization
 
-👉 [View Project](./projects/FPT/Capstone-Project/)
+👉 
