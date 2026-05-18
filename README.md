@@ -59,10 +59,9 @@
 - Kibana
 - Logstash
 
-🎯 Features:
-- Alert Monitoring
-- Log Analysis
-- Rule Management
-- Dashboard Visualization
+⚔️ Attack Scenarios (Red Team):
 
-👉 
+- SQL Injection — automated exploitation using SQLMap
+- Brute Force — custom Python script targeting authentication endpoints
+- Port Scanning — Nmap basic scan to trigger IDS signature rules
+
